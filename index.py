@@ -1,5 +1,6 @@
 import cgi
 import webapp2
+from data import AnotherClass
 
 MAIN_PAGE_HTML = """\
 <html>
@@ -56,4 +57,5 @@ class Submission(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
 	('/', MainPage),
 	('/submit', Submission),
+	('/anotherPage/', AnotherClass)
 ], debug=True)
