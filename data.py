@@ -16,5 +16,5 @@ class Candidate(ndb.Model):
 class Event(ndb.Model):
     name = ndb.StringProperty(indexed=True)
     location = ndb.StringProperty(indexed=True)
-    date = ndb.DateProperty(indexed=True)
-    time = ndb.TimeProperty(indexed=True)
+    date = ndb.TextProperty(indexed=True)
+    time = ndb.TextProperty(indexed=True)

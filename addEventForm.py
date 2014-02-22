@@ -67,5 +67,5 @@ class AddEventToDatastore(webapp2.RequestHandler):
         event.date = self.request.get('date')
         event.time = self.request.get('time')
         event.put()
-
+        self.response.write("""<html><body><table><tr><td><form action="/main" method="post"><input type="submit" value="Main Menu"></form></td></tr></table></html></body>""")
 

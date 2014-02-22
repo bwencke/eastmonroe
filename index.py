@@ -7,6 +7,7 @@ from addEventForm import AddEventForm
 from addEventForm import AddEventToDatastore
 
 from viewCandidates import ViewCandidates
+from viewEvents import ViewEvents
 
 from MainButtons import MainButtons
 
@@ -62,6 +63,7 @@ application = webapp2.WSGIApplication([
         ('/addEvent', AddEventForm),
         ('/persistEvent', AddEventToDatastore),
         ('/viewCandidates', ViewCandidates),
+        ('/viewEvents', ViewEvents),
 ], debug=True)
 
 
