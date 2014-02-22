@@ -43,4 +43,5 @@ class ViewCandidates(webapp2.RequestHandler):
                                     candidate.email,
                                      candidate.major,
                                      candidate.university))
-        self.response.out.write('</body></html>')
+        self.response.out.write("""<tr><td><input type="submit" value="Main Menu"></td></tr>""")
+        self.response.out.write('</table></body></html>')

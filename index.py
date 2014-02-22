@@ -29,14 +29,14 @@ MAIN_PAGE_LOGIN = """\
                     <td>
                         Login:
                     </td>
-                    <td>
+                <td>
                         <select>
-                        <option value="" disabled="disabled" selected="selected">select your name</option>
-                        <option value="Joe">Joe</option>
-                        <option value="Paul">Paul</option>
-                        <option value="Ben">Ben</option>
-            </select>
-                    </td>
+                                <option value="" disabled="disabled" selected="selected">-----</option>
+                                <option value="ben">Ben</option>
+                                <option value="joe">Joe</option>
+                                <option value="paul">Paul</option>
+                        </select>
+                </td>
                 </tr>
 				<tr>
 					<td></td>
