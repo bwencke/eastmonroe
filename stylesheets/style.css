@@ -15,7 +15,7 @@ td {
 tr.even {
     background-color:rgb(255,238,230);
 }
-tr:hover {
+.view tr:hover {
 	cursor:pointer;
 	background-color:#D95B43;
 }

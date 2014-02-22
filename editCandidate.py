@@ -9,7 +9,7 @@ ADD_CANDIDATE_FORM = """\
     <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
 	<body><div class = "contentBox">
-    <form action="/persistCandidate" method="post" id="addCandidate">
+    <form action="/persistExistingCandidate" method="post" id="editCandidate">
     <h1>Edit Candidate</h1>
     <table>
     <tr>
@@ -18,6 +18,7 @@ ADD_CANDIDATE_FORM = """\
     </td>
     <td>
     <input type="text" name="name" value="%s">
+    <input type="hidden" name="email" value="%s">
     </td>
     </tr>
     <tr>
@@ -27,14 +28,6 @@ ADD_CANDIDATE_FORM = """\
     <td>
     <input style="width:25px; height:auto;" type="radio" name="sex" value="male">Male
     <input style="width:25px; height:auto;" type="radio" name="sex" value="female">Female
-    </td>
-    </tr>
-    <tr>
-    <td>
-    Email:
-    </td>
-    <td>
-    <input type="email" name="email" value="%s">
     </td>
     </tr>
     <tr>
@@ -115,7 +108,7 @@ ADD_CANDIDATE_FORM = """\
     <td style="border-top:1px solid black; padding-top:20px;"><input style="border:none" type="file" name="resume" id="resume"></td>
     
     </tr></table>
-    <a class="butt" href="javascript:void()" onClick="document.getElementById('addCandidate').submit()">Submit</a>
+    <a class="butt" href="javascript:void()" onClick="document.getElementById('editCandidate').submit()">Submit</a>
     
     </form></div>
 	</body>
@@ -143,17 +136,16 @@ class EditCandidateForm(webapp2.RequestHandler):
                                  "selected " if candidate.status=="Offer Pending" else "",
                                  "selected " if candidate.status=="Offer Accepted" else "",
                                  "selected " if candidate.status=="Offer Rejected" else "",
-                                 "selected " if candidate.status=="Decline to Move Forward" else "",))
+                                 "selected " if candidate.status=="Decline to Move Forward" else ""))
 
 
-class AddCandidateToDatastore(webapp2.RequestHandler):
+class EditCandidateToDatastore(webapp2.RequestHandler):
     
     def post(self):
-        self.response.write("Candidate Added.")
-        candidate = Candidate()
+        self.response.write("Candidate Edited.")
+        candidate = Candidate.query(Candidate.email == self.request.get('email'))
         candidate.sex = self.request.get('sex')
         candidate.name = self.request.get('name')
-        candidate.email = self.request.get('email')
         candidate.university = self.request.get('university')
         candidate.major = self.request.get('major')
         candidate.gpa = self.request.get('gpa')

@@ -15,7 +15,7 @@ class ViewCandidates(webapp2.RequestHandler):
     def get(self):
         candidates = Candidate.query().fetch(20)
 
-        self.response.out.write('<html>' + STYLE + '<body><div class="contentBox"><h1>Candidates</h1><table><tr class="head"><td>Name</td><td>Email</td><td>Major</td><td>University</td><td></td></tr>')
+        self.response.out.write('<html>' + STYLE + '<body><div class="contentBox"><h1>Candidates</h1><table class="view"><tr class="head"><td>Name</td><td>Email</td><td>Major</td><td>University</td><td></td></tr>')
         i = 0;
         for candidate in candidates:
             i=i+1
