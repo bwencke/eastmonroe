@@ -14,7 +14,7 @@ def hello():
 
 @app.route('/joe/')
 def joe():
-	return 'This is Joe\'s page.'
+	return 'This is Joe\'s page, BITCH.'
 
 @app.errorhandler(404)
 def page_not_found(e):
