@@ -9,6 +9,6 @@ class Candidate(ndb.Model):
     GPA = ndb.FloatProperty()
     background = ndb.TextProperty()
     interests = ndb.TextProperty()
-    otherInfo = ndb.TextProperty()
+    notes = ndb.TextProperty()
     date = ndb.DateTimeProperty(auto_now_add=True)
-    
+    #resume = ndb.
