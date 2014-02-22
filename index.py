@@ -3,6 +3,9 @@ import webapp2
 from data import Candidate
 from addCandidateForm import AddCandidateForm
 from addCandidateForm import AddCandidateToDatastore
+
+from editCandidate import EditCandidateForm
+
 from addEventForm import AddEventForm
 from addEventForm import AddEventToDatastore
 
@@ -64,6 +67,7 @@ application = webapp2.WSGIApplication([
         ('/persistEvent', AddEventToDatastore),
         ('/viewCandidates', ViewCandidates),
         ('/viewEvents', ViewEvents),
+        ('/editCandidate', EditCandidateForm)
 ], debug=True)
 
 
