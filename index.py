@@ -4,6 +4,8 @@ from data import Candidate
 from addCandidateForm import AddCandidateForm
 from addCandidateForm import AddCandidateToDatastore
 
+from viewCandidates import ViewCandidates
+
 from MainButtons import MainButtons
 
 MAIN_PAGE_LOGIN = """\
