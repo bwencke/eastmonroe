@@ -1,11 +1,6 @@
 import webapp2
 from google.appengine.ext import ndb
 
-class AnotherClass(webapp2.RequestHandler):
-
-    def get(self):
-        self.response.write('<html><body>hi</body></html>');
-
 class Candidate(ndb.Model):
     name = ndb.StringProperty(indexed=True)
     email = ndb.StringProperty(indexed=True)

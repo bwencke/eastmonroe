@@ -52,9 +52,16 @@ class Submission(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
         ('/', MainPage),
         ('/main', MainButtons),
+<<<<<<< HEAD
         ('/submit', Submission),
         ('/addCandidate', AddCandidateForm),
         ('/persistCandidate', AddCandidateToDatastore),
+=======
+	('/submit', Submission),
+    ('/addCandidate', AddCandidateForm),
+    ('/persistCandidate', AddCandidateToDatastore),
+    ('/viewCandidates', ViewCandidates)
+>>>>>>> dca283c1693b16ae285cb80917703af6f6d73eeb
 ], debug=True)
 
 
