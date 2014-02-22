@@ -1,5 +1,7 @@
 import cgi
 import webapp2
+from data import Candidate
+from newCandidate import NewCandidate
 
 MAIN_PAGE_HTML = """\
 <html>
@@ -59,11 +61,15 @@ MAIN_PAGE_LOGIN = """\
 				<tr>
 					<td></td>
                     <td>
-					<input type="submit" value="SUBMIT"></div>
+					<input type="submit" value="SUBMIT">
 					</td>
 				</tr>			
 			</table>
 		</form>
+        <form action="/newCandidate" method="post">
+            <input type="text" name="candidateName" value="Dennis Rodman">
+            <input type="submit" value="SUBMIT">
+        </form>
 	</body>
 </html>
 """
@@ -83,5 +89,9 @@ class Submission(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
 	('/', MainPage),
 	('/submit', Submission),
+<<<<<<< HEAD
         ('/addCandidate', AddCandidateForm)
+=======
+    ('/newCandidate', NewCandidate)
+>>>>>>> 0b277d22a481ec33dbacb985902906914fe0a88c
 ], debug=True)
