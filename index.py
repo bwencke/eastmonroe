@@ -3,6 +3,8 @@ import webapp2
 from data import Candidate
 from addCandidateForm import AddCandidateForm
 from addCandidateForm import AddCandidateToDatastore
+from addEventForm import AddEventForm
+from addEventForm import AddEventToDatastore
 
 from viewCandidates import ViewCandidates
 
@@ -54,10 +56,12 @@ class Submission(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
         ('/', MainPage),
         ('/main', MainButtons),
-	('/submit', Submission),
-    ('/addCandidate', AddCandidateForm),
-    ('/persistCandidate', AddCandidateToDatastore),
-    ('/viewCandidates', ViewCandidates)
+        ('/submit', Submission),
+        ('/addCandidate', AddCandidateForm),
+        ('/persistCandidate', AddCandidateToDatastore),
+        ('/addEvent', AddEventForm),
+        ('/persistEvent', AddEventToDatastore),
+        ('/viewCandidates', ViewCandidates),
 ], debug=True)
 
 

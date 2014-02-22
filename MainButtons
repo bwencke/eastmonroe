@@ -1,0 +1,14 @@
+import cgi
+import webapp2
+
+BUTTONS = """\
+<html>
+        <body>
+        </body>
+</html>
+"""
+
+class MainButtons(webapp2.RequestHandler):
+	
+	def get(self):
+		self.response.write('<html><body>hi</body></html>');
