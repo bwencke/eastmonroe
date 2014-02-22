@@ -8,9 +8,11 @@ class ViewCandidates(webapp2.RequestHandler):
     def get(self):
         candidates = Candidate.query().fetch(20)
 
-        self.response.out.write('<html><body><table><tr class="head"><td>Name</td><td>Email</td></tr>')
+        self.response.out.write('<html><body><table><tr class="head"><td>Name</td><td>&nbsp&nbsp&nbsp</td><td>Email</td></tr>')
         for candidate in candidates:
-            self.response.out.write('<tr><td>%s</td><td>%s</td></tr>' %
+            self.response.out.write('<tr><td>%s</td><td></td><td>%s</td></tr>' %
                                     (candidate.name,
                                     candidate.email))
-        self.response.out.write('</body></html>')
+
+        self.response.out.write("""<tr><td><button type="button" onClick="window.location='/'">Return</button></td></tr>""")
+        self.response.out.write('</table></body></html>')
