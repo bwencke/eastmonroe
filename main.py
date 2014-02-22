@@ -16,6 +16,10 @@ def hello():
 def joe():
 	return 'This is Joe\'s page.'
 
+@app.route('/caracas/')
+def caracas():
+	return "You don't want to be here."
+
 @app.errorhandler(404)
 def page_not_found(e):
     """Return a custom 404 error."""
