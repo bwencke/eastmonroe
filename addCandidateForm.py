@@ -1,6 +1,7 @@
 import cgi
 import webapp2
 from data import Candidate
+from MainButtons import MainButtons
 
 ADD_CANDIDATE_FORM = """\
 <html>
@@ -12,6 +13,14 @@ ADD_CANDIDATE_FORM = """\
 						New Candidate:
 					</td>
 				</tr>
+				<tr>
+                                        <td>
+                                                <input type="radio" name="sex" value="male">Male<br>
+                                        </td>
+                                        <td>
+                                                <input type="radio" name="sex" value="female">Female
+                                        </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         Name:
@@ -33,7 +42,12 @@ ADD_CANDIDATE_FORM = """\
                                         University:
                                     </td>
                                     <td>
-                                        <input type="text" name="university">
+                                        <select>
+                                        <option value="" disabled="disabled" selected="selected">-----</option>
+                                        <option value="purdue">Purdue University</option>
+                                        <option value="illinois">University of Illinois</option>
+                                        <option value="depauw">Depauw University</option>
+                                        </select>
                                     </td>
 				</tr>
 				<tr>
@@ -41,7 +55,12 @@ ADD_CANDIDATE_FORM = """\
                                         Major:
                                     </td>
                                     <td>
-                                        <input type="text" name="major">
+                                        <select>
+                                        <option value="" disabled="disabled" selected="selected">-----</option>
+                                        <option value="cs">Computer Science</option>
+                                        <option value="engr">Engineering</option>
+                                        <option value="comm">Communication</option>
+                                        </select>
                                     </td>
 				</tr>
 				<tr>
@@ -49,7 +68,7 @@ ADD_CANDIDATE_FORM = """\
                                         GPA:
                                     </td>
                                     <td>
-                                        <input type="number" name="gpa">
+                                        <input type="text" name="gpa">
                                     </td>
 				</tr>
 				<tr>
@@ -57,12 +76,38 @@ ADD_CANDIDATE_FORM = """\
                                         Background:
                                     </td>
                                     <td>
-                                        <input type="<textarea rows="4" cols="50"></textArea>" name="background">
+                                        <input type="background" name="background">
+                                    </td>
+				</tr>
+				<tr>
+                                    <td>
+                                        Interests:
+                                    </td>
+                                    <td>
+                                        <input type="interests" name="interests">
+                                    </td>
+				</tr>
+				<tr>
+                                    <td>
+                                        Notes:
+                                    </td>
+                                    <td>
+                                        <input type="notes" name="notes">
                                     </td>
 				</tr>
 			</table>
-                        <input type="submit" value="Submit">
+
+                        <tr>
+                                <td>
+                                        <label for="file">Upload a Resume</label>
+                                        <input type="file" name="resume" id="resume"><br>  
+                                </td>
+                        </tr>
+
+			<input type="submit" value="Submit">
+                        
 		</form>
+		
 	</body>
 </html>
 """
@@ -78,11 +123,17 @@ class AddCandidateToDatastore(webapp2.RequestHandler):
     def post(self):
         self.response.write("Candidate Added.")
         candidate = Candidate()
+        candidate.sex = self.request.get('sex')
         candidate.name = self.request.get('name')
         candidate.email = self.request.get('email')
         candidate.university = self.request.get('university')
         candidate.major = self.request.get('major')
         candidate.gpa = self.request.get('gpa')
         candidate.background = self.request.get('background')
+        candidate.resume = self.request.get('resume')
+        candidate.resume = self.request.get('interests')
+        candidate.resume = self.request.get('notes')
         candidate.put()
+
+        self.response.write("""<html><body><table><tr><td><form action="/main" method="post"><input type="submit" value="Main Menu"></form></td></tr></table></html></body>""")
 
