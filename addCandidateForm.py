@@ -95,6 +95,21 @@ ADD_CANDIDATE_FORM = """\
                                         <input type="notes" name="notes">
                                     </td>
 				</tr>
+				<tr>
+                                    <td>
+                                        Status:
+                                    </td>
+                                    <td>
+                                        <select>
+                                        <option value="" disabled="disabled" selected="selected">-----</option>
+                                        <option value="Pre-Interview">Pre-Interview</option>
+                                        <option value="Offer Pending">Offer Pending</option>
+                                        <option value="Offer Accepted">Offer Accepted</option>
+                                        <option value="Offer Rejected">Offer Rejected</option>
+                                        <option value="Decline to Move Forward">Decline to Move Forward</option>
+                                        </select>
+                                    </td>
+				</tr>
 			</table>
 
                         <tr>
