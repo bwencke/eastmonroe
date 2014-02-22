@@ -83,4 +83,5 @@ class Submission(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
 	('/', MainPage),
 	('/submit', Submission),
+        ('/addCandidate', AddCandidateForm)
 ], debug=True)
