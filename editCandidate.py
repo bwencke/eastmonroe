@@ -10,14 +10,14 @@ ADD_CANDIDATE_FORM = """\
     </head>
 	<body><div class = "contentBox">
     <form action="/persistCandidate" method="post" id="addCandidate">
-    <h1>Add Candidate</h1>
+    <h1>Edit Candidate</h1>
     <table>
     <tr>
     <td>
     Name:
     </td>
     <td>
-    <input type="text" name="name">
+    <input type="text" name="name" value="%s">
     </td>
     </tr>
     <tr>
@@ -34,7 +34,7 @@ ADD_CANDIDATE_FORM = """\
     Email:
     </td>
     <td>
-    <input type="email" name="email">
+    <input type="email" name="email" value="%s">
     </td>
     </tr>
     <tr>
@@ -42,11 +42,11 @@ ADD_CANDIDATE_FORM = """\
     University:
     </td>
     <td>
-    <select>
+    <select name="university">
     <option value="" disabled="disabled" selected="selected">-----</option>
-    <option value="purdue">Purdue University</option>
-    <option value="illinois">University of Illinois</option>
-    <option value="depauw">Depauw University</option>
+    <option %svalue="purdue">Purdue University</option>
+    <option %svalue="illinois">University of Illinois</option>
+    <option %svalue="depauw">Depauw University</option>
     </select>
     </td>
     </tr>
@@ -55,11 +55,11 @@ ADD_CANDIDATE_FORM = """\
     Major:
     </td>
     <td>
-    <select>
+    <select name="major">
     <option value="" disabled="disabled" selected="selected">-----</option>
-    <option value="cs">Computer Science</option>
-    <option value="engr">Engineering</option>
-    <option value="comm">Communication</option>
+    <option %svalue="cs">Computer Science</option>
+    <option %svalue="engr">Engineering</option>
+    <option %svalue="comm">Communication</option>
     </select>
     </td>
     </tr>
@@ -68,7 +68,7 @@ ADD_CANDIDATE_FORM = """\
     GPA:
     </td>
     <td>
-    <input type="text" name="gpa">
+    <input type="text" name="gpa" value="%s">
     </td>
     </tr>
     <tr>
@@ -76,7 +76,7 @@ ADD_CANDIDATE_FORM = """\
     Background:
     </td>
     <td>
-    <input type="background" name="background">
+    <input type="background" name="background" value="%s">
     </td>
     </tr>
     <tr>
@@ -84,7 +84,7 @@ ADD_CANDIDATE_FORM = """\
     Interests:
     </td>
     <td>
-    <input type="interests" name="interests">
+    <input type="interests" name="interests" value="%s">
     </td>
     </tr>
     <tr>
@@ -92,7 +92,7 @@ ADD_CANDIDATE_FORM = """\
     Notes:
     </td>
     <td>
-    <input type="notes" name="notes">
+    <input type="notes" name="notes" value="%s">
     </td>
     </tr>
     <tr>
@@ -102,11 +102,11 @@ ADD_CANDIDATE_FORM = """\
     <td style="padding-bottom:20px;">
     <select>
     <option value="" disabled="disabled" selected="selected">-----</option>
-    <option value="Pre-Interview">Pre-Interview</option>
-    <option value="Offer Pending">Offer Pending</option>
-    <option value="Offer Accepted">Offer Accepted</option>
-    <option value="Offer Rejected">Offer Rejected</option>
-    <option value="Decline to Move Forward">Decline to Move Forward</option>
+    <option %svalue="Pre-Interview">Pre-Interview</option>
+    <option %svalue="Offer Pending">Offer Pending</option>
+    <option %svalue="Offer Accepted">Offer Accepted</option>
+    <option %svalue="Offer Rejected">Offer Rejected</option>
+    <option %svalue="Decline to Move Forward">Decline to Move Forward</option>
     </select>
     </td>
     </tr>
@@ -126,8 +126,24 @@ class EditCandidateForm(webapp2.RequestHandler):
     
 	def post(self):
         	#candidates = Candidate.query().fetch(20)
-        	email = self.request.get('email')
-		self.response.write("<!--" + email + "-->"+ADD_CANDIDATE_FORM)
+            candidate = Candidate.query(Candidate.email == self.request.get('email')).fetch(1)[0]
+            self.response.out.write(ADD_CANDIDATE_FORM %
+                                (candidate.name,
+                                 candidate.email,
+                                 "selected " if candidate.university=="purdue" else "",
+                                 "selected " if candidate.university=="illinois" else "",
+                                 "selected " if candidate.university=="depauw" else "",
+                                 "selected " if candidate.major=="cs" else "",
+                                 "selected " if candidate.major=="engr" else "",
+                                 "selected " if candidate.major=="comm" else "",candidate.GPA,
+                                 candidate.background,
+                                 candidate.interests,
+                                 candidate.notes,
+                                 "selected " if candidate.status=="Pre-Interview" else "",
+                                 "selected " if candidate.status=="Offer Pending" else "",
+                                 "selected " if candidate.status=="Offer Accepted" else "",
+                                 "selected " if candidate.status=="Offer Rejected" else "",
+                                 "selected " if candidate.status=="Decline to Move Forward" else "",))
 
 
 class AddCandidateToDatastore(webapp2.RequestHandler):
