@@ -91,5 +91,6 @@ application = webapp2.WSGIApplication([
 	('/', MainPage),
 	('/submit', Submission),
     ('/addCandidate', AddCandidateForm),
-    ('/persistCandidate', AddCandidateToDatastore)
+    ('/persistCandidate', AddCandidateToDatastore),
+    ('/viewCandidates', ViewCandidates)
 ], debug=True)
