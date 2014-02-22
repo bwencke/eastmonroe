@@ -44,9 +44,9 @@ ADD_CANDIDATE_FORM = """\
                                     <td>
                                         <select name="university">
                                         <option value="" disabled="disabled" selected="selected">-----</option>
-                                        <option value="purdue">Purdue University</option>
-                                        <option value="illinois">University of Illinois</option>
-                                        <option value="depauw">Depauw University</option>
+                                        <option value="Purdue University">Purdue University</option>
+                                        <option value="University of Illinois">University of Illinois</option>
+                                        <option value="Depauw University">Depauw University</option>
                                         </select>
                                     </td>
 				</tr>
@@ -57,9 +57,9 @@ ADD_CANDIDATE_FORM = """\
                                     <td>
                                         <select name="major">
                                         <option value="" disabled="disabled" selected="selected">-----</option>
-                                        <option value="cs">Computer Science</option>
-                                        <option value="engr">Engineering</option>
-                                        <option value="comm">Communication</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="Communication">Communication</option>
                                         </select>
                                     </td>
 				</tr>
@@ -141,8 +141,9 @@ class AddCandidateToDatastore(webapp2.RequestHandler):
         candidate.gpa = self.request.get('gpa')
         candidate.background = self.request.get('background')
         candidate.resume = self.request.get('resume')
-        candidate.resume = self.request.get('interests')
-        candidate.resume = self.request.get('notes')
+        candidate.interests = self.request.get('interests')
+        candidate.notes = self.request.get('notes')
+        candidate.status = self.request.get('status')
         candidate.put()
 
         self.response.write("""<html><body><table><tr><td><form action="/main" method="post"><input type="submit" value="Main Menu"></form></td></tr></table></html></body>""")

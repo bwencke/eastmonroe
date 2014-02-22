@@ -11,6 +11,7 @@ class Candidate(ndb.Model):
     interests = ndb.TextProperty()
     notes = ndb.TextProperty()
     date = ndb.DateTimeProperty(auto_now_add=True)
+    status = ndb.TextProperty()
     #resume = ndb.
 
 class Event(ndb.Model):
