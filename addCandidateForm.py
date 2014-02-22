@@ -2,8 +2,9 @@ import cgi
 import webapp2
 from data import Candidate
 from MainButtons import MainButtons
+from data import Event
 
-ADD_CANDIDATE_FORM = """\
+ADD_CANDIDATE_FORM_1 = """\
 <html>
     <head>
      <link rel="stylesheet" href="/stylesheets/style.css">
@@ -96,6 +97,13 @@ ADD_CANDIDATE_FORM = """\
                                     </td>
 				</tr>
 				<tr>
+				    <td>
+                                        Initial Rating:
+                                    </td>
+                                    <td>
+                                        <input type="range" name="score" min="1" max="10">
+                                    </td>
+				<tr>
                                     <td style="padding-bottom:20px;">
                                         Status:
                                     </td>
@@ -109,8 +117,10 @@ ADD_CANDIDATE_FORM = """\
                                         <option value="Decline to Move Forward">Decline to Move Forward</option>
                                         </select>
                                     </td>
-				</tr>
-                        <tr>
+				</tr>"""
+
+
+ADD_CANDIDATE_FORM_2 =          """<tr>
                                         <td style="border-top:1px solid black; padding-top:20px;">Upload a Resume</td>
                                         <td style="border-top:1px solid black; padding-top:20px;"><input style="border:none" type="file" name="resume" id="resume"></td> 
 
@@ -125,7 +135,15 @@ ADD_CANDIDATE_FORM = """\
 class AddCandidateForm(webapp2.RequestHandler):
 
 	def get(self):
-		self.response.write(ADD_CANDIDATE_FORM)
+		self.response.write(ADD_CANDIDATE_FORM_1)
+		events = Event.query().fetch(20)
+		#self.response.out.write('<tr>')
+                for event in events:
+                    self.response.out.write('<tr><td></td><td><input style="width:15px; height:15px" type="checkbox" name="event" value=%s>%s</td></tr>' %
+                                            (event.name,
+                                            event.name))
+                #self.response.out.write('</tr>')
+		self.response.write(ADD_CANDIDATE_FORM_2)
 
 
 class AddCandidateToDatastore(webapp2.RequestHandler):
@@ -147,4 +165,13 @@ class AddCandidateToDatastore(webapp2.RequestHandler):
         candidate.put()
 
         self.response.write("""<html><body><table><tr><td><form action="/main" method="post"><input type="submit" value="Main Menu"></form></td></tr></table></html></body>""")
+
+
+
+
+
+
+
+
+
 
