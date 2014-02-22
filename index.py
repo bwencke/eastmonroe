@@ -12,6 +12,16 @@ from MainButtons import MainButtons
 
 MAIN_PAGE_LOGIN = """\
 <html>
+    <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="stylesheets/css/bootstrap.min.css">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="stylesheets/css/bootstrap-theme.min.css">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/stylesheets/js/bootstrap.min.js"></script>
+    </head>
 	<body>
 		<form action="/main" method="post">
 			<table>

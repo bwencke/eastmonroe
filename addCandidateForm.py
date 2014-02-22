@@ -4,14 +4,13 @@ from data import Candidate
 
 ADD_CANDIDATE_FORM = """\
 <html>
-	<body>
-		<form action="/persistCandidate" method="post">
-			<table>
-				<tr>
-					<td>
-						New Candidate:
-					</td>
-				</tr>
+    <head>
+     <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+	<body><div class = "contentBox">
+		<form action="/persistCandidate" method="post" name="addCandidate">
+			<h1>Add Candidate</h1>
+                <table>
                                 <tr>
                                     <td>
                                         Name:
@@ -61,8 +60,8 @@ ADD_CANDIDATE_FORM = """\
                                     </td>
 				</tr>
 			</table>
-                        <input type="submit" value="Submit">
-		</form>
+            <a class="butt" onClick="document.getElementById('addCandidate').submit()">Submit</a>
+		</form></div>
 	</body>
 </html>
 """
