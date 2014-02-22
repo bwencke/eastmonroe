@@ -27,11 +27,7 @@ MAIN_PAGE_LOGIN = """\
 				<tr>
 					<td></td>
                     <td>
-<<<<<<< HEAD
-					<input type="submit" value="Submit"></div>
-=======
-					<input type="submit" value="SUBMIT">
->>>>>>> 6e27e94064204e7c8176ca3494d56b805f107f88
+					<input type="submit" value="Submit">
 					</td>
 				</tr>			
 			</table>
