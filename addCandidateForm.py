@@ -97,6 +97,13 @@ ADD_CANDIDATE_FORM_1 = """\
                                     </td>
 				</tr>
 				<tr>
+				    <td>
+                                        Initial Rating:
+                                    </td>
+                                    <td>
+                                        <input type="range" name="score" min="1" max="10">
+                                    </td>
+				<tr>
                                     <td style="padding-bottom:20px;">
                                         Status:
                                     </td>
