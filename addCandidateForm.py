@@ -1,6 +1,7 @@
 import cgi
 import webapp2
 from data import Candidate
+from MainButtons import MainButtons
 
 ADD_CANDIDATE_FORM = """\
 <html>
@@ -134,5 +135,5 @@ class AddCandidateToDatastore(webapp2.RequestHandler):
         candidate.resume = self.request.get('notes')
         candidate.put()
 
-        self.response.write("""<html><body><table><tr><td><button type="button" onClick="window.location='/main'">Main Menu</button></td><tr/></table></html></body>""")
+        self.response.write("""<html><body><table><tr><td><form action="/main" method="post"><input type="submit" value="Main Menu"></form></td></tr></table></html></body>""")
 

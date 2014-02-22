@@ -11,14 +11,10 @@ class Candidate(ndb.Model):
     interests = ndb.TextProperty()
     notes = ndb.TextProperty()
     date = ndb.DateTimeProperty(auto_now_add=True)
-<<<<<<< HEAD
     #resume = ndb.
-=======
 
 class Event(ndb.Model):
     name = ndb.StringProperty(indexed=True)
     location = ndb.StringProperty(indexed=True)
     date = ndb.DateProperty(indexed=True)
     time = ndb.TimeProperty(indexed=True)
-    
->>>>>>> a27edcff6acdb340823fc53c9c3694d4224566cb

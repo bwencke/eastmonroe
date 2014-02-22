@@ -59,12 +59,9 @@ application = webapp2.WSGIApplication([
         ('/submit', Submission),
         ('/addCandidate', AddCandidateForm),
         ('/persistCandidate', AddCandidateToDatastore),
-<<<<<<< HEAD
-=======
         ('/addEvent', AddEventForm),
         ('/persistEvent', AddEventToDatastore),
         ('/viewCandidates', ViewCandidates),
->>>>>>> a27edcff6acdb340823fc53c9c3694d4224566cb
 ], debug=True)
 
 
