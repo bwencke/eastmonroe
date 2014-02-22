@@ -3,12 +3,18 @@ import webapp2
 
 BUTTONS = """\
 <html>
+    <head>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
         <body>
-            <button type="button" onClick="window.location='/viewCandidate'">View Candidates</button>
-            <button type="button" onClick="window.location='/addCandidate'">Add Candidate</button>
-            <button type="button" onClick="window.location='/viewEvent'">View Events</button>
-            <button type="button" onClick="window.location='/addEvent'">Add Event</button>
-        </body>
+            <div class="contentBox" style="width:500px;">
+            <h1>What would you like to do?</h1>
+            <a class="butt" href='/viewCandidates'>View Candidates</a>
+            <a class="butt" href='/addCandidate'>Add Candidate</a>
+            <a class="butt" href='/viewEvent'>View Events</a>
+            <a class="butt" href='/addEvent'>Add Event</a>
+            </div>
+    </body>
 </html>
 """
 

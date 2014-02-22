@@ -12,14 +12,6 @@ ADD_CANDIDATE_FORM = """\
 		<form action="/persistCandidate" method="post" name="addCandidate">
 			<h1>Add Candidate</h1>
                 <table>
-				<tr>
-                                        <td>
-                                                <input type="radio" name="sex" value="male">Male<br>
-                                        </td>
-                                        <td>
-                                                <input type="radio" name="sex" value="female">Female
-                                        </td>
-                                </tr>
                                 <tr>
                                     <td>
                                         Name:
@@ -28,6 +20,15 @@ ADD_CANDIDATE_FORM = """\
                                         <input type="text" name="name">
                                     </td>
                                 </tr>
+    <tr>
+    <td>
+        Gender:
+    </td>
+    <td>
+    <input style="width:25px;" type="radio" name="sex" value="male">Male<br>
+    <input style="width:25px;" type="radio" name="sex" value="female">Female
+    </td>
+    </tr>
 				<tr>
                                     <td>
                                         Email:
@@ -87,22 +88,19 @@ ADD_CANDIDATE_FORM = """\
                                     </td>
 				</tr>
 				<tr>
-                                    <td>
+                                    <td style="padding-bottom:20px;">
                                         Notes:
                                     </td>
-                                    <td>
+                                    <td style="padding-bottom:20px;">
                                         <input type="notes" name="notes">
                                     </td>
 				</tr>
-			</table>
                         <tr>
-                                <td>
-                                        <label for="file">Upload a Resume</label>
-                                        <input type="file" name="resume" id="resume"><br>  
-                                </td>
-                        </tr>
+                                        <td style="border-top:1px solid black; padding-top:20px;">Upload a Resume</td>
+                                        <td style="border-top:1px solid black; padding-top:20px;"><input type="file" name="resume" id="resume"></td> 
 
-			<a class="butt" onClick="document.getElementById('addCandidate').submit()">Submit</a>
+                    </tr></table>
+    <a class="butt" onClick="document.getElementById('addCandidate').submit()">Submit</a>
                         
 		</form></div>
 	</body>

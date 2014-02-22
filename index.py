@@ -13,21 +13,16 @@ from MainButtons import MainButtons
 MAIN_PAGE_LOGIN = """\
 <html>
     <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="stylesheets/css/bootstrap.min.css">
-    
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="stylesheets/css/bootstrap-theme.min.css">
-    
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="/stylesheets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
 	<body>
-		<form action="/main" method="post">
-			<table>
+		<form action="/main" method="post" id="login">
+			<div class="contentBox">
+            <h1>Blackwood Consulting</h1>
+            <table>
                 <tr>
                     <td>
-                        Login:
+                        User:
                     </td>
                 <td>
                         <select>
@@ -37,15 +32,10 @@ MAIN_PAGE_LOGIN = """\
                                 <option value="paul">Paul</option>
                         </select>
                 </td>
-                </tr>
-				<tr>
-					<td></td>
-                    <td>
-					<input type="submit" value="Submit">
-					</td>
-				</tr>			
-			</table>
+                </tr></table>
+					<a class="butt" href="javascript:void()" onClick="document.getElementById('login').submit()">Log In</a>			
 		</form>
+        </div>
 	</body>
 </html>
 """
