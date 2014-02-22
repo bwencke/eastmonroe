@@ -1,10 +1,11 @@
 import cgi
 import webapp2
+from data import Candidate
 
 ADD_CANDIDATE_FORM = """\
 <html>
 	<body>
-		<form action="/addCandidate" method="post">
+		<form action="/persistCandidate" method="post">
 			<table>
 				<tr>
 					<td>
@@ -52,6 +53,7 @@ ADD_CANDIDATE_FORM = """\
                                     </td>
 				</tr>
 			</table>
+            <input type="submit" value="Submit">
 		</form>
 	</body>
 </html>
@@ -61,3 +63,17 @@ class AddCandidateForm(webapp2.RequestHandler):
 
 	def get(self):
 		self.response.write(ADD_CANDIDATE_FORM)
+
+
+class AddCandidateToDatastore(webapp2.RequestHandler):
+    
+    def post(self):
+        self.response.write("Candidate Added.")
+        candidate = Candidate()
+        candidate.name = self.request.get('name')
+        candidate.email = self.request.get('email')
+        candidate.university = self.request.get('university')
+        candidate.major = self.request.get('major')
+        candidate.gpa = self.request.get('gpa')
+        candidate.put()
+

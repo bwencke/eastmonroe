@@ -1,7 +1,8 @@
 import cgi
 import webapp2
 from data import Candidate
-from newCandidate import NewCandidate
+from addCandidateForm import AddCandidateForm
+from addCandidateForm import AddCandidateToDatastore
 
 MAIN_PAGE_HTML = """\
 <html>
@@ -89,6 +90,6 @@ class Submission(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
 	('/', MainPage),
 	('/submit', Submission),
-        ('/addCandidate', AddCandidateForm)
-        ('/newCandidate', NewCandidate)
+    ('/addCandidate', AddCandidateForm),
+    ('/persistCandidate', AddCandidateToDatastore)
 ], debug=True)
