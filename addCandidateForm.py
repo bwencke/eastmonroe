@@ -5,22 +5,13 @@ from MainButtons import MainButtons
 
 ADD_CANDIDATE_FORM = """\
 <html>
-	<body>
-		<form action="/persistCandidate" method="post">
-			<table>
-				<tr>
-					<td>
-						New Candidate:
-					</td>
-				</tr>
-				<tr>
-                                        <td>
-                                                <input type="radio" name="sex" value="male">Male<br>
-                                        </td>
-                                        <td>
-                                                <input type="radio" name="sex" value="female">Female
-                                        </td>
-                                </tr>
+    <head>
+     <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+	<body><div class = "contentBox">
+		<form action="/persistCandidate" method="post" id="addCandidate">
+			<h1>Add Candidate</h1>
+                <table>
                                 <tr>
                                     <td>
                                         Name:
@@ -29,6 +20,15 @@ ADD_CANDIDATE_FORM = """\
                                         <input type="text" name="name">
                                     </td>
                                 </tr>
+    <tr>
+    <td>
+        Gender:
+    </td>
+    <td>
+    <input style="width:25px;" type="radio" name="sex" value="male">Male<br>
+    <input style="width:25px;" type="radio" name="sex" value="female">Female
+    </td>
+    </tr>
 				<tr>
                                     <td>
                                         Email:
@@ -88,10 +88,10 @@ ADD_CANDIDATE_FORM = """\
                                     </td>
 				</tr>
 				<tr>
-                                    <td>
+                                    <td style="padding-bottom:20px;">
                                         Notes:
                                     </td>
-                                    <td>
+                                    <td style="padding-bottom:20px;">
                                         <input type="notes" name="notes">
                                     </td>
 				</tr>
@@ -110,19 +110,14 @@ ADD_CANDIDATE_FORM = """\
                                         </select>
                                     </td>
 				</tr>
-			</table>
-
                         <tr>
-                                <td>
-                                        <label for="file">Upload a Resume</label>
-                                        <input type="file" name="resume" id="resume"><br>  
-                                </td>
-                        </tr>
+                                        <td style="border-top:1px solid black; padding-top:20px;">Upload a Resume</td>
+                                        <td style="border-top:1px solid black; padding-top:20px;"><input type="file" name="resume" id="resume"></td> 
 
-			<input type="submit" value="Submit">
+                    </tr></table>
+    <a class="butt" href="javascript:void()" onClick="document.getElementById('addCandidate').submit()">Submit</a>
                         
-		</form>
-		
+		</form></div>
 	</body>
 </html>
 """
