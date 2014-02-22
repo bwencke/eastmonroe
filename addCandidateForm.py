@@ -42,7 +42,7 @@ ADD_CANDIDATE_FORM = """\
                                         University:
                                     </td>
                                     <td>
-                                        <select>
+                                        <select name="university">
                                         <option value="" disabled="disabled" selected="selected">-----</option>
                                         <option value="purdue">Purdue University</option>
                                         <option value="illinois">University of Illinois</option>
@@ -55,7 +55,7 @@ ADD_CANDIDATE_FORM = """\
                                         Major:
                                     </td>
                                     <td>
-                                        <select>
+                                        <select name="major">
                                         <option value="" disabled="disabled" selected="selected">-----</option>
                                         <option value="cs">Computer Science</option>
                                         <option value="engr">Engineering</option>
@@ -100,7 +100,7 @@ ADD_CANDIDATE_FORM = """\
                                         Status:
                                     </td>
                                     <td style="padding-bottom:20px;">
-                                        <select>
+                                        <select name="status">
                                         <option value="" disabled="disabled" selected="selected">-----</option>
                                         <option value="Pre-Interview">Pre-Interview</option>
                                         <option value="Offer Pending">Offer Pending</option>
