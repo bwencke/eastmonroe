@@ -143,6 +143,7 @@ class AddCandidateToDatastore(webapp2.RequestHandler):
         candidate.resume = self.request.get('resume')
         candidate.interests = self.request.get('interests')
         candidate.notes = self.request.get('notes')
+        candidate.status = self.request.get('status')
         candidate.put()
 
         self.response.write("""<html><body><table><tr><td><form action="/main" method="post"><input type="submit" value="Main Menu"></form></td></tr></table></html></body>""")
