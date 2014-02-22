@@ -16,4 +16,10 @@ class Candidate(ndb.Model):
     interests = ndb.TextProperty()
     otherInfo = ndb.TextProperty()
     date = ndb.DateTimeProperty(auto_now_add=True)
+
+class Event(ndb.Model):
+    name = ndb.StringProperty(indexed=True)
+    location = ndb.StringProperty(indexed=True)
+    date = ndb.DateProperty(indexed=True)
+    time = ndb.TimeProperty(indexed=True)
     

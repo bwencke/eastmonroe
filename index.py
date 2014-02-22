@@ -3,6 +3,8 @@ import webapp2
 from data import Candidate
 from addCandidateForm import AddCandidateForm
 from addCandidateForm import AddCandidateToDatastore
+from addEventForm import AddEventForm
+from addEventForm import AddEventToDatastore
 
 from MainButtons import MainButtons
 
@@ -55,6 +57,8 @@ application = webapp2.WSGIApplication([
 	('/submit', Submission),
         ('/addCandidate', AddCandidateForm),
         ('/persistCandidate', AddCandidateToDatastore),
+        ('/addEvent', AddEventForm),
+        ('/persistEvent', AddEventToDatastore),
 ], debug=True)
 
 
