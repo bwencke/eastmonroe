@@ -27,7 +27,11 @@ MAIN_PAGE_LOGIN = """\
 				<tr>
 					<td></td>
                     <td>
-					<input type="submit" value="Submit">
+<<<<<<< HEAD
+					<input type="submit" value="Submit"></div>
+=======
+					<input type="submit" value="SUBMIT">
+>>>>>>> 6e27e94064204e7c8176ca3494d56b805f107f88
 					</td>
 				</tr>			
 			</table>
@@ -54,12 +58,15 @@ class Submission(webapp2.RequestHandler):
 
 
 application = webapp2.WSGIApplication([
+<<<<<<< HEAD
         ('/', MainPage),
         ('/main', MainButtons)
-        ('/submit', Submission),
-        ('/addCandidate', AddCandidateForm),
-        ('/persistCandidate', AddCandidateToDatastore),
-        ('/viewCandidates', ViewCandidates)
+=======
+	('/', MainPage),
+	('/submit', Submission),
+    ('/addCandidate', AddCandidateForm),
+    ('/persistCandidate', AddCandidateToDatastore),
+    ('/viewCandidates', ViewCandidates)
 ], debug=True)
 
 
