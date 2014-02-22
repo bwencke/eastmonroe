@@ -10,11 +10,15 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+    return 'Hello fuckers!'
 
 @app.route('/joe/')
 def joe():
 	return 'This is Joe\'s page, BITCH.'
+
+@app.route('/caracas/')
+def caracas():
+	return "You don't want to be here."
 
 @app.errorhandler(404)
 def page_not_found(e):
