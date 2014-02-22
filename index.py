@@ -52,7 +52,7 @@ class Submission(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
         ('/', MainPage),
         ('/main', MainButtons),
-	('/submit', Submission),
+        ('/submit', Submission),
         ('/addCandidate', AddCandidateForm),
         ('/persistCandidate', AddCandidateToDatastore),
 ], debug=True)
