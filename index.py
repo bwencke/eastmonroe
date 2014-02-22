@@ -32,10 +32,6 @@ MAIN_PAGE_LOGIN = """\
 				</tr>			
 			</table>
 		</form>
-        <form action="/newCandidate" method="post">
-            <input type="text" name="candidateName" value="Dennis Rodman">
-            <input type="submit" value="SUBMIT">
-        </form>
 	</body>
 </html>
 """
@@ -54,11 +50,8 @@ class Submission(webapp2.RequestHandler):
 
 
 application = webapp2.WSGIApplication([
-<<<<<<< HEAD
         ('/', MainPage),
-        ('/main', MainButtons)
-=======
-	('/', MainPage),
+        ('/main', MainButtons),
 	('/submit', Submission),
     ('/addCandidate', AddCandidateForm),
     ('/persistCandidate', AddCandidateToDatastore),

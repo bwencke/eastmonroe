@@ -52,8 +52,16 @@ ADD_CANDIDATE_FORM = """\
                                         <input type="number" name="gpa">
                                     </td>
 				</tr>
+				<tr>
+                                    <td>
+                                        Background:
+                                    </td>
+                                    <td>
+                                        <input type="<textarea rows="4" cols="50"></textArea>" name="background">
+                                    </td>
+				</tr>
 			</table>
-            <input type="submit" value="Submit">
+                        <input type="submit" value="Submit">
 		</form>
 	</body>
 </html>
@@ -75,5 +83,6 @@ class AddCandidateToDatastore(webapp2.RequestHandler):
         candidate.university = self.request.get('university')
         candidate.major = self.request.get('major')
         candidate.gpa = self.request.get('gpa')
+        candidate.background = self.request.get('background')
         candidate.put()
 
