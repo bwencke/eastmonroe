@@ -30,4 +30,3 @@ class ViewCandidates(webapp2.RequestHandler):
 
 
 #<a href="/" class="butt">Main Menu</a>
->>>>>>> 9f24f42dc1c430c6c28e69c21f414668526e5824

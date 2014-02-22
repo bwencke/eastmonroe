@@ -44,9 +44,9 @@ ADD_CANDIDATE_FORM = """\
                                     <td>
                                         <select name="university">
                                         <option value="" disabled="disabled" selected="selected">-----</option>
-                                        <option value="purdue">Purdue University</option>
-                                        <option value="illinois">University of Illinois</option>
-                                        <option value="depauw">Depauw University</option>
+                                        <option value="Purdue University">Purdue University</option>
+                                        <option value="University of Illinois">University of Illinois</option>
+                                        <option value="Depauw University">Depauw University</option>
                                         </select>
                                     </td>
 				</tr>
@@ -57,9 +57,9 @@ ADD_CANDIDATE_FORM = """\
                                     <td>
                                         <select name="major">
                                         <option value="" disabled="disabled" selected="selected">-----</option>
-                                        <option value="cs">Computer Science</option>
-                                        <option value="engr">Engineering</option>
-                                        <option value="comm">Communication</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="Communication">Communication</option>
                                         </select>
                                     </td>
 				</tr>
