@@ -11,7 +11,7 @@ BUTTONS = """\
             <h1>What would you like to do?</h1>
             <a class="butt" href='/viewCandidates'>View Candidates</a>
             <a class="butt" href='/addCandidate'>Add Candidate</a>
-            <a class="butt" href='/viewEvent'>View Events</a>
+            <a class="butt" href='/viewEvents'>View Events</a>
             <a class="butt" href='/addEvent'>Add Event</a>
             </div>
     </body>
