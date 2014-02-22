@@ -25,8 +25,8 @@ ADD_CANDIDATE_FORM = """\
         Gender:
     </td>
     <td>
-    <input style="width:25px;" type="radio" name="sex" value="male">Male<br>
-    <input style="width:25px;" type="radio" name="sex" value="female">Female
+    <input style="width:25px; height:auto;" type="radio" name="sex" value="male">Male
+    <input style="width:25px; height:auto;" type="radio" name="sex" value="female">Female
     </td>
     </tr>
 				<tr>
@@ -88,18 +88,18 @@ ADD_CANDIDATE_FORM = """\
                                     </td>
 				</tr>
 				<tr>
-                                    <td style="padding-bottom:20px;">
+                                    <td>
                                         Notes:
                                     </td>
-                                    <td style="padding-bottom:20px;">
+                                    <td>
                                         <input type="notes" name="notes">
                                     </td>
 				</tr>
 				<tr>
-                                    <td>
+                                    <td style="padding-bottom:20px;">
                                         Status:
                                     </td>
-                                    <td>
+                                    <td style="padding-bottom:20px;">
                                         <select>
                                         <option value="" disabled="disabled" selected="selected">-----</option>
                                         <option value="Pre-Interview">Pre-Interview</option>
@@ -112,7 +112,7 @@ ADD_CANDIDATE_FORM = """\
 				</tr>
                         <tr>
                                         <td style="border-top:1px solid black; padding-top:20px;">Upload a Resume</td>
-                                        <td style="border-top:1px solid black; padding-top:20px;"><input type="file" name="resume" id="resume"></td> 
+                                        <td style="border-top:1px solid black; padding-top:20px;"><input style="border:none" type="file" name="resume" id="resume"></td> 
 
                     </tr></table>
     <a class="butt" href="javascript:void()" onClick="document.getElementById('addCandidate').submit()">Submit</a>

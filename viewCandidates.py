@@ -18,9 +18,9 @@ class ViewCandidates(webapp2.RequestHandler):
         i = 0;
         for candidate in candidates:
             i=i+1
-            self.response.out.write('<tr')
+            self.response.out.write('<tr onClick="javascript:window.location=\'/addCandidate\'"')
             if(i%2 == 0):
-                self.response.out.write(' class="odd"')
+                self.response.out.write(' class="even"')
             self.response.out.write('><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' %
                                     (candidate.name,
                                     candidate.email,
