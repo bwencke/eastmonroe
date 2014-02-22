@@ -26,4 +26,7 @@ class ViewCandidates(webapp2.RequestHandler):
                                     candidate.email,
                                      candidate.major,
                                      candidate.university))
-        self.response.out.write('</table><a href="/" class="butt">Main Menu</a></div></body></html>')
+        self.response.out.write('</table><form action="/main" method="post"><input type="submit" value="Main Menu"></form></div></body></html>')
+
+
+#<a href="/" class="butt">Main Menu</a>
